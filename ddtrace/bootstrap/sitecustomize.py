@@ -86,6 +86,7 @@ try:
     enabled = os.environ.get('DATADOG_TRACE_ENABLED')
     hostname = os.environ.get('DD_AGENT_HOST', os.environ.get('DATADOG_TRACE_AGENT_HOSTNAME'))
     port = os.environ.get('DATADOG_TRACE_AGENT_PORT')
+    uds_path = os.environ.get('DATADOG_TRACE_UDS_PATH')
     priority_sampling = os.environ.get('DATADOG_PRIORITY_SAMPLING')
 
     opts = {}
@@ -97,6 +98,8 @@ try:
         opts['hostname'] = hostname
     if port:
         opts['port'] = int(port)
+    if uds_path:
+        opts['uds_path'] = uds_path
     if priority_sampling:
         opts['priority_sampling'] = asbool(priority_sampling)
 

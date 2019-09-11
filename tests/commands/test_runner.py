@@ -109,6 +109,16 @@ class DdtraceRunTest(BaseTestCase):
             )
             assert out.startswith(b'Test success')
 
+    def test_uds_path_from_env(self):
+        """
+        DATADOG_TRACE_UDS_PATH set uds_path
+        """
+        with self.override_env(dict(DATADOG_TRACE_UDS_PATH='/path/to/apm.socket')):
+            out = subprocess.check_output(
+                ['ddtrace-run', 'python', 'tests/commands/ddtrace_run_uds_path.py']
+            )
+            assert out.startswith(b'Test success')
+
     def test_host_port_from_env_dd(self):
         """
         DD_AGENT_HOST|DD_TRACE_AGENT_PORT point to the tracer

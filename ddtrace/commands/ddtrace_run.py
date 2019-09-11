@@ -29,6 +29,7 @@ Available environment variables:
     DATADOG_PATCH_MODULES=module:patch,module:patch... e.g. boto:true,redis:false : override the modules patched for this execution of the program (default: none)
     DATADOG_TRACE_AGENT_HOSTNAME=localhost: override the address of the trace agent host that the default tracer will attempt to submit to  (default: localhost)
     DATADOG_TRACE_AGENT_PORT=8126: override the port that the default tracer will submit to (default: 8126)
+    DATADOG_TRACE_UDS_PATH : set Unix Domain Socket path of the agent.
     DATADOG_SERVICE_NAME : override the service name to be used for this program (no default)
                            This value is passed through when setting up middleware for web framework integrations.
                            (e.g. pylons, flask, django)

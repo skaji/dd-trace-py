@@ -554,6 +554,7 @@ The available environment variables for ``ddtrace-run`` are:
   ``localhost``)
 * ``DATADOG_TRACE_AGENT_PORT=8126``: override the port that the default tracer
   will submit to  (default: 8126)
+* ``DATADOG_TRACE_UDS_PATH`` (default: none): set Unix Domain Socket path of the agent
 * ``DATADOG_PRIORITY_SAMPLING`` (default: true): enables :ref:`Priority
   Sampling`
 * ``DD_LOGS_INJECTION`` (default: false): enables :ref:`Logs Injection`
